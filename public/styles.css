@@ -1,10 +1,15 @@
-/* Reset dan Base Styles */
+/* =======================
+   RESET DAN BASE STYLES
+   ======================= */
+
+/* Hilangkan margin & padding default semua elemen, dan atur box-sizing agar ukuran termasuk border dan padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Style dasar untuk body: font, warna teks, line-height, background gradasi, dan tinggi minimum layar penuh */
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
@@ -13,13 +18,19 @@ body {
   min-height: 100vh;
 }
 
+/* Membatasi lebar konten agar tidak terlalu lebar di layar besar, serta memberikan padding sisi */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Header Styles */
+
+/* =======================
+   HEADER
+   ======================= */
+
+/* Header dengan background putih, efek shadow, dan posisi sticky agar tetap di atas saat scroll */
 .header {
   background: white;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -28,6 +39,7 @@ body {
   z-index: 1000;
 }
 
+/* Flexbox untuk isi header: brand di kiri, menu di kanan */
 .header .container {
   display: flex;
   justify-content: space-between;
@@ -35,28 +47,33 @@ body {
   padding: 1rem 20px;
 }
 
+/* Brand (logo + teks) */
 .nav-brand {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* Icon brand */
 .nav-brand i {
   font-size: 2rem;
   color: #3b82f6;
 }
 
+/* Nama kelompok di header */
 .nav-brand h1 {
   font-size: 1.5rem;
   color: #1f2937;
   font-weight: 700;
 }
 
+/* Menu navigasi horizontal */
 .nav-menu {
   display: flex;
   gap: 2rem;
 }
 
+/* Link menu */
 .nav-link {
   text-decoration: none;
   color: #6b7280;
@@ -65,11 +82,13 @@ body {
   padding: 0.5rem 0;
 }
 
+/* Efek hover & active pada menu */
 .nav-link:hover,
 .nav-link.active {
   color: #3b82f6;
 }
 
+/* Tombol menu mobile (hamburger), default disembunyikan */
 .mobile-menu-btn {
   display: none;
   font-size: 1.5rem;
@@ -77,12 +96,17 @@ body {
   cursor: pointer;
 }
 
-/* Hero Section */
+
+/* =======================
+   HERO SECTION (Beranda)
+   ======================= */
+
 .hero {
   padding: 5rem 0;
   text-align: center;
 }
 
+/* Judul hero */
 .hero-content h2 {
   font-size: 2.5rem;
   color: #1f2937;
@@ -90,6 +114,7 @@ body {
   font-weight: 700;
 }
 
+/* Deskripsi hero */
 .hero-content p {
   font-size: 1.2rem;
   color: #6b7280;
@@ -99,6 +124,7 @@ body {
   margin-right: auto;
 }
 
+/* Gambar hero */
 .hero-image {
   margin-bottom: 2rem;
 }
@@ -110,6 +136,7 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Card fitur di halaman utama */
 .feature-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -117,6 +144,7 @@ body {
   margin-top: 3rem;
 }
 
+/* Style card fitur */
 .feature-card {
   background: white;
   padding: 2rem;
@@ -127,26 +155,23 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Efek hover card */
 .feature-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Icon di dalam feature-card */
 .feature-card i {
   font-size: 3rem;
   margin-bottom: 1rem;
   display: block;
 }
 
-.feature-card:nth-child(1) i {
-  color: #3b82f6;
-}
-.feature-card:nth-child(2) i {
-  color: #10b981;
-}
-.feature-card:nth-child(3) i {
-  color: #8b5cf6;
-}
+/* Warna icon tiap card */
+.feature-card:nth-child(1) i { color: #3b82f6; }
+.feature-card:nth-child(2) i { color: #10b981; }
+.feature-card:nth-child(3) i { color: #8b5cf6; }
 
 .feature-card h3 {
   font-size: 1.3rem;
@@ -158,12 +183,17 @@ body {
   color: #6b7280;
 }
 
-/* Main Content */
+
+/* =======================
+   MAIN CONTENT
+   ======================= */
+
 .main-content {
   padding: 2rem 0;
   min-height: calc(100vh - 200px);
 }
 
+/* Tombol kembali ke beranda */
 .back-link {
   margin-bottom: 2rem;
 }
@@ -182,6 +212,7 @@ body {
   color: #1d4ed8;
 }
 
+/* Judul halaman dalam main content */
 .page-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -198,13 +229,19 @@ body {
   color: #6b7280;
 }
 
-/* Member Cards */
+
+/* =======================
+   MEMBER CARDS (Profil)
+   ======================= */
+
+/* Grid untuk kartu anggota */
 .members-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 2rem;
 }
 
+/* Kartu anggota */
 .member-card {
   background: white;
   border-radius: 10px;
@@ -213,12 +250,14 @@ body {
   padding: 2rem;
 }
 
+/* Info anggota di atas kartu */
 .member-info {
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
 }
 
+/* Foto profil anggota */
 .member-photo {
   width: 80px;
   height: 80px;
@@ -227,6 +266,7 @@ body {
   margin-right: 1rem;
 }
 
+/* Nama dan NIM anggota */
 .member-details h3 {
   font-size: 1.3rem;
   color: #1f2937;
@@ -237,10 +277,12 @@ body {
   color: #6b7280;
 }
 
+/* Bagian sertifikat */
 .certificate-section {
   margin-bottom: 2rem;
 }
 
+/* Header sertifikat dengan icon */
 .certificate-header {
   display: flex;
   align-items: center;
@@ -252,12 +294,14 @@ body {
   color: #f59e0b;
 }
 
+/* Gambar sertifikat */
 .certificate-img {
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Poin pembelajaran */
 .learning-points {
   margin-bottom: 2rem;
 }
@@ -277,6 +321,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Bullet custom berwarna biru */
 .learning-points li::before {
   content: "•";
   color: #3b82f6;
@@ -285,6 +330,7 @@ body {
   margin-right: 0.5rem;
 }
 
+/* Quote pengalaman */
 .quote-section {
   background: #f0f9ff;
   padding: 1.5rem;
@@ -299,403 +345,4 @@ body {
 .quote-section p {
   color: #374151;
   font-style: italic;
-}
-
-/* Skills Section */
-.section {
-  margin-bottom: 4rem;
-}
-
-.section h3 {
-  font-size: 2rem;
-  color: #1f2937;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
-}
-
-.skill-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.skill-card i {
-  font-size: 2rem;
-  color: #3b82f6;
-  margin-bottom: 1rem;
-}
-
-.skill-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.skill-info h4 {
-  color: #1f2937;
-  font-size: 1.2rem;
-}
-
-.skill-level {
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
-
-.skill-level.intermediate {
-  background: #dbeafe;
-  color: #1d4ed8;
-}
-
-.skill-level.advanced {
-  background: #d1fae5;
-  color: #065f46;
-}
-
-/* Achievements */
-.achievements-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.achievement-item {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-}
-
-.achievement-number {
-  width: 40px;
-  height: 40px;
-  background: #10b981;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  flex-shrink: 0;
-}
-
-.achievement-content h4 {
-  color: #1f2937;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.achievement-content p {
-  color: #6b7280;
-}
-
-/* Timeline */
-.timeline {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-}
-
-.timeline-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-.timeline-icon {
-  width: 50px;
-  height: 50px;
-  background: #3b82f6;
-  color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.timeline-week {
-  background: #dbeafe;
-  color: #1d4ed8;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  display: inline-block;
-}
-
-.timeline-content h4 {
-  color: #1f2937;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
-
-.timeline-content p {
-  color: #6b7280;
-}
-
-/* Impressions */
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.section-header i {
-  font-size: 1.5rem;
-}
-
-.section-header:nth-of-type(1) i {
-  color: #ef4444;
-}
-.section-header:nth-of-type(2) i {
-  color: #3b82f6;
-}
-.section-header:nth-of-type(3) i {
-  color: #f59e0b;
-}
-.section-header:nth-of-type(4) i {
-  color: #10b981;
-}
-
-.impressions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
-}
-
-.impression-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.impression-card h4 {
-  color: #1f2937;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-.impression-card p {
-  color: #374151;
-  line-height: 1.7;
-}
-
-.group-impression {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.group-impression p {
-  color: #374151;
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-/* Challenge Section */
-.challenge-section {
-  display: grid;
-  gap: 2rem;
-}
-
-.challenge-item,
-.solution-item {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.challenge-item h4,
-.solution-item h4 {
-  color: #1f2937;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-
-.challenge-item p,
-.solution-item p {
-  color: #374151;
-  line-height: 1.7;
-}
-
-/* Message Section */
-.message-section {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
-  text-align: center;
-  color: white;
-}
-
-.message-content h4 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.message-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
-.message-emoji {
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-/* Footer */
-.footer {
-  background: #1f2937;
-  color: white;
-  padding: 2rem 0;
-  text-align: center;
-  margin-top: 4rem;
-}
-
-.footer p {
-  margin-bottom: 1rem;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: #d1d5db;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: white;
-}
-
-.footer-links span {
-  color: #6b7280;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    flex-direction: column;
-    padding: 1rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-menu.active {
-    display: flex;
-  }
-
-  .mobile-menu-btn {
-    display: block;
-  }
-
-  .hero-content h2 {
-    font-size: 2rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .feature-cards {
-    grid-template-columns: 1fr;
-  }
-
-  .members-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .impressions-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .achievement-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .timeline-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .page-header h2 {
-    font-size: 2rem;
-  }
-
-  .message-section {
-    padding: 2rem;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 0 15px;
-  }
-
-  .hero {
-    padding: 3rem 0;
-  }
-
-  .hero-content h2 {
-    font-size: 1.8rem;
-  }
-
-  .member-card,
-  .skill-card,
-  .impression-card,
-  .achievement-item,
-  .challenge-item,
-  .solution-item {
-    padding: 1.5rem;
-  }
-
-  .message-section {
-    padding: 1.5rem;
-  }
 }
